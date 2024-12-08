@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Roboto|Parkinsans|Jaro">
+    <title>Sign In Page</title>
+    <link href="drums.css" rel="stylesheet">
+</head>
+<body>
+    <div class="recordtitle" style="margin-top: 100px;margin-bottom: 50px;" ><b>Sign In!</div> </b>
+        <br>
+        <br>
+    <form id="signInForm" style="text-align: center;">
+        <br> 
+        <label for='name' style="font-family: 'Audiowide',sans-serif;font-size: 30px;">Name:</label>
+        <input type='text' id='name' required>
+        <span class='error'></span><br><br>
+
+        <label for='email' style="font-family: 'Audiowide',sans-serif;font-size: 30px;">Email:</label>
+        <input type='email' id='email' required>
+        <span class='error'></span><br><br>
+
+        <label for='phone' style="font-family: 'Audiowide',sans-serif;font-size: 30px;">Phone Number:</label>
+        <input type='number' id='phone' required>
+        <span class='error'></span><br><br>
+        <button type='submit' class="enter">Enter</button>
+        <div style="margin-bottom:50px;"></div>
+    </form>
+
+    <script>
+        document.getElementById('signInForm').onsubmit = function() {
+        let errors = document.querySelectorAll('#signInForm.error');
+        errors.forEach(error => error.innerText = '');
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+
+        if (name === '') {
+        errors[0].innerText = 'Name is required.';
+        }
+        if (email === '') {
+        errors[1].innerText = 'Email is required.';
+        }
+        if (phone === '') {
+        errors[2].innerText = 'Phone No. is required.';
+        }
+
+        if (name && email && phone) {
+            window.location.href = "drums.html";
+        }
+        return false; 
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Roboto|Parkinsans|Jaro">
+    <link rel="stylesheet" href="drums.css">
+</head>
+<body>
+    <div class="homefont"><b>Drum Kit
+    </div></b>
+    <br> 
+    <br>
+    <div class="subtitle"> Space, price, and effort—no compromises, just rhythm! </div>
+    <div class="subtitle"> Your own drum kit !</div>
+    <br>
+    <br>
+    <div class="all" align="center">
+        <button class="w button">w <div><img src="bass.png" width="100px" height="100px"></div></button>
+        <button class="a button">a<div><img src="crash.png"  width="100px" height="100px"></div></button>
+        <button class="s button">s<br><img src="snaredrum.png"  width="100px" height="100px"></button>
+        <button class="d button">d<br><img src="tom1.png"  width="100px" height="100px"></button>
+        <button class="j button">j<br><img src="tom2.png"  width="100px" height="100px"></button>
+        <button class="k button">k<br><img src="tom3.png"  width="100px" height="100px"></button>
+        <button class="l button">l<br><img src="tom4.png"  width="100px" height="100px"></button>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div align="center">
+        <button class="signinbutton">Get Started</a></button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log("test");
+            $(".button").click(function(){
+                var buttonStyle = this.innerHTML.trim().charAt(0);
+                sound(buttonStyle);
+                animation(buttonStyle);
+            });
+            $('.signinbutton').click(function() {
+                window.location.href = "sign.html"; 
+            });
+        });
+    </script>
+    <script src="drums.js"></script>
+</body>
+</html>
